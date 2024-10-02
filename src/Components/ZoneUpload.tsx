@@ -16,14 +16,14 @@ const ZoneUpload = () => {
     try {
       const fileCatch = await e.target.files?.[0];
       if (fileCatch) {
-        // if (fileCatch.type !== "application/pdf") {
-        //   return toast.error("Format refusé");
-        // }
+        if (fileCatch.type !== "application/pdf") {
+          return toast.error("Format refusé");
+        }
 
         //vérifie la taille (5 mo)
-        // if (fileCatch.size > 5 * 1024 * 1024) {
-        //   return toast.error("Fichier trop grand, 5 Mo max.");
-        // }
+        if (fileCatch.size > 5 * 1024 * 1024) {
+          return toast.error("Fichier trop grand, 5 Mo max.");
+        }
         setNameDoc(fileCatch.name);
         setFileUpload(fileCatch);
       }
