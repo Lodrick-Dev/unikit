@@ -33,6 +33,14 @@ function App() {
   };
   useEffect(() => {
     getCount();
+
+    const videoElement = document.querySelector("video");
+    if (videoElement) {
+      videoElement.muted = true;
+      videoElement.play().catch((error) => {
+        console.error("Autoplay failed:", error);
+      });
+    }
   }, []);
   return (
     <>
@@ -61,7 +69,7 @@ function App() {
         <Footer />
       </StyledApp>
       <Overlay />
-      <BackgroundVideo autoPlay loop preload="auto" muted={true}>
+      <BackgroundVideo autoPlay loop preload="auto" muted>
         <source src="./assets/bgvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </BackgroundVideo>
