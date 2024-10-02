@@ -56,6 +56,7 @@ const Options = () => {
     if (fileUpload) {
       data.append("File", fileUpload);
       data.append("option", selectMatiere);
+      data.append("field", inputNot);
       setLoading((prev) => !prev);
     }
     try {
@@ -107,6 +108,7 @@ const Options = () => {
     if (fileUpload) {
       data.append("File", fileUpload);
       data.append("option", selectMatiere);
+      data.append("field", inputNot);
       setLoading((prev) => !prev);
     }
 
