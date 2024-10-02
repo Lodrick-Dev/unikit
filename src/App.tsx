@@ -61,8 +61,8 @@ function App() {
         <Footer />
       </StyledApp>
       <Overlay />
-      <BackgroundVideo autoPlay muted loop>
-        <source src="./assets/bgvideo.mp4" />
+      <BackgroundVideo autoPlay muted loop preload="auto">
+        <source src="./assets/bgvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </BackgroundVideo>
       <ToastContainer position="top-right" />
